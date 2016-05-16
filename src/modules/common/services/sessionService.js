@@ -7,8 +7,6 @@ module.exports =
         return {
             login: function (data) {
                 localStorage.setItem('user',JSON.stringify(data));
-                console.log('login ' + data.name + " " + data.password);
-                console.log(JSON.parse(localStorage.getItem('user')));
             },
             logout: function () {
                 localStorage.removeItem('user');
