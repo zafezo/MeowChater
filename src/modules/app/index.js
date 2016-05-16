@@ -12,7 +12,8 @@ module.exports =
     require('../common').name,
     //example app module:
     require('./foo').name,
-      require('./account').name
+      require('./account').name,
+      require('./chat_room').name
     //load extra app modules here, e.g.:
     //require('./frontend').name,
     //require('./admin').name

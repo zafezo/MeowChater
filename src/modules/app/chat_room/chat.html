@@ -1,0 +1,8 @@
+<div>
+    <input type="text" ng-model="data.message"/>
+    <button type="button" ng-click="send()">Send</button>
+</div>
+
+<div  style="overflow-y: scroll; height: 500px;">
+    <p ng-repeat="m in messages">{{m.message}} - {{m.user.name}}</p>
+</div>

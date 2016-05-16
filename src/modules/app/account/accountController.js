@@ -3,9 +3,10 @@
  */
 'use strict';
 module.exports = function ($scope, sessionService) {
-    $scope.title = 'Hello fucker';
+    $scope.user = sessionService.getUser();
     $scope.login = function () {
         sessionService.login($scope.data);
+        $scope.user = sessionService.getUser();
     };
     $scope.isLogin  = function () {
       return sessionService.isLogin();
