@@ -4,5 +4,6 @@
 </div>
 
 <div  style="overflow-y: scroll; height: 500px;">
-    <p ng-repeat="m in messages">{{m.message}} - {{m.user.name}}</p>
+    <p ng-repeat="m in messages">{{m.message}} - {{m.user.name}} - {{m.date| date:'dd.MM.yyyy HH:mm:ss'}}  <img style="width:100px;" ng-src="{{m.image}}" alt="Description" /></p>
+
 </div>
