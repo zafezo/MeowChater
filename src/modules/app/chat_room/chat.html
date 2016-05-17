@@ -1,9 +1,19 @@
-<div>
-    <input type="text" ng-model="data.message"/>
-    <button type="button" ng-click="send()">Send</button>
-</div>
+<form class="textarea form-group"  ng-submit="send()">
+    <button type="button" class="btn btn-default" ui-sref="login">Profile</button>
+    <input class="" placeholder="Type your message here!" type="text" ng-model="data.message"/>
+    <button type="submit" class="btn btn-default">Send</button>
+</form>
 
-<div  style="overflow-y: scroll; height: 500px;">
-    <p ng-repeat="m in messages">{{m.message}} - {{m.user.name}} - {{m.date| date:'dd.MM.yyyy HH:mm:ss'}}  <img style="width:100px;" ng-src="{{m.image}}" alt="Description" /></p>
+<ol class="chat">
+    <li class="other" ng-repeat="m in messages"  ng-class="(m.user.name == me)? 'self': 'other' ">
+        <div class="avatar">
+            <img class="avatar" ng-src="{{m.image}}" alt="Description"/>
+        </div>
 
-</div>
+        <div class="msg">
+            <p class="name">{{m.user.name}}</p><br>
+            <p class="text">{{m.message}}</p><br>
+            <time>{{m.date| date:'dd.MM.yyyy HH:mm:ss'}}</time>
+        </div>
+    </li>
+</ol>

@@ -7,9 +7,12 @@
     <!--styles-->
   </head>
   <body>
-    <a href ui-sref="chat">Chat</a>
-    <a href ui-sref="login">Login</a>
-    <div ui-view></div>
+
+    <div  ui-view>
+      <div  ng-controller="Main">
+        <div class="jumbotron center" ng-click="start()">Start</div>
+      </div>
+    </div>
     <!--scripts-->
   </body>
 </html>

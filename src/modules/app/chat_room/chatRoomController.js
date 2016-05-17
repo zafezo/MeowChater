@@ -5,16 +5,20 @@ module.exports = function ($scope,messageService,sessionService,$interval) {
     //init "messages"
     $scope.messages = messageService.getAll();
     var sound = new Audio('./assets/audio/Meow.ogg.ogx');
-    var count =  $scope.messages.length;
 
     //Update "messages every 3s"
     $interval(function () {
-        $scope.messages = messageService.getAll();
-        if(count !== $scope.messages.length){
-            count =  $scope.messages.length;
+        var temp = messageService.getAll();
+        if($scope.messages.length !== temp.length){
+            console.log('$scope.messages.length '+$scope.messages.length);
+            console.log('temp.length '+temp.length);
             sound.play();
         }
+        $scope.messages = temp;
+
     },3000);
+
+    $scope.me = sessionService.getUser().name;
 
     //Send message to service
     $scope.send = function (){
@@ -28,7 +32,7 @@ module.exports = function ($scope,messageService,sessionService,$interval) {
         };
         messageService.send(message);
         $scope.messages = messageService.getAll();
+        console.log('$scope.messages.length in send'+$scope.messages.length);
         $scope.data.message = "";
-        count++;
     };
 };

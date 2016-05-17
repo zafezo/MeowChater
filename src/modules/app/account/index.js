@@ -6,7 +6,7 @@
 module.exports = angular.module('MeowChater.account',[])
     .config(function ($stateProvider) {
         $stateProvider.state('login',{
-            url:'/login',
+            url:'login',
             templateUrl:'app/account/layout.html',
             controller:'LoginCtrl'
         })

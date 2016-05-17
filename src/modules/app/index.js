@@ -10,11 +10,18 @@ module.exports =
     require('../../../tmp/templates').name,
     //useful directives, filters, services shared across the app
     require('../common').name,
-    //example app module:
-    require('./foo').name,
+    // app module:
       require('./account').name,
       require('./chat_room').name
-    //load extra app modules here, e.g.:
-    //require('./frontend').name,
-    //require('./admin').name
-  ]);
+
+  ])
+      .controller('Main',function ($scope, $state,sessionService) {
+          $scope.start = function () {
+              if(sessionService.isLogin()){
+                  $state.go('chat');
+              }else {
+                  $state.go('login');
+              }
+          }
+      });
+;

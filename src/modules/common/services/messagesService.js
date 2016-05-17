@@ -2,7 +2,8 @@
  * Created by swen on 5/16/16.
  */
 module.exports = function () {
-    // localStorage.setItem('messages',JSON.stringify([]));
+    if(JSON.parse(localStorage.getItem('messages')) == null)
+         localStorage.setItem('messages',JSON.stringify([]));
     return{
         send: function (message) {
             var messages = JSON.parse(localStorage.getItem('messages'));
