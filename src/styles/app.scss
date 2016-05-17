@@ -1,12 +1,6 @@
 @import "variables";
 @import "imports";
 
-body {
-  text-align: center;
-  color: #222;
-  margin: 20px;
-  background: black;
-}
 
 .user_name{
   float: left;
@@ -30,11 +24,26 @@ a, a:visited {
 @import url(http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css);
 
 html, body {
-  background: #e5e5e5;
+  text-align: center;
+  background: rgba(10, 66, 57, 0.4);
   font-family: 'Lato', sans-serif;
   overflow: hidden;
   margin: 0px auto;
 }
+
+.login{
+  margin-top: 5%;
+}
+
+.start{
+  position: fixed;
+  //background: rgba(5, 68, 140, 0.75);
+  width: auto;
+  height: auto;
+  top: 30%;
+  left: 35%;
+}
+
 ::selection{
   background: rgba(82,179,217,0.3);
   color: inherit;
@@ -84,9 +93,9 @@ a{
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
   margin-left: 15px;
-}
-.back:active {
-  background: rgba(30, 12, 33, 0.52);
+  :active {
+    background: rgba(30, 12, 33, 0.52);
+  }
 }
 .name{
   float: left;
@@ -114,9 +123,8 @@ a{
   background: none;
   overflow-y: scroll;
   height: 80vh;
-  margin: 0;
   padding: 0 0 100px 0;
-  margin-top: 60px;
+  margin-top: 80px;
   margin-bottom: 10px;
 }
 .chat li {
@@ -312,7 +320,7 @@ a{
   left: 0px;
   right: 0px;
   width: 100%;
-  height: 50px;
+  height: 70px;
   z-index: 99;
   background: #fafafa;
   border: none;
@@ -322,7 +330,7 @@ a{
   color: #666;
   font-weight: 400;
   input{
-    margin-top: 10px;
+    margin-top: 20px;
     width: 80%;
     height: 30px;
   }

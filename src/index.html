@@ -8,9 +8,9 @@
   </head>
   <body>
 
-    <div  ui-view>
-      <div  ng-controller="Main">
-        <div class="jumbotron center" ng-click="start()">Start</div>
+    <div  class="container" ui-view>
+      <div  ng-controller="Main" class="row">
+        <div class="start jumbotron btn btn-default" ng-click="start()"><h1 class="page-header">Go to Chat</h1></div>
       </div>
     </div>
     <!--scripts-->

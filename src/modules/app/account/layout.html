@@ -1,11 +1,19 @@
-
-<div ng-show="isLogin()">
-    Hello  {{user.name}}
-    <button type="button" ng-click="logout()">Logout User</button>
+<div class="login">
+    <div class="row jumbotron col-sm-offset-3 col-sm-6">
+        <div ng-show="isLogin()">
+            <h1 class="page-header">Hello  {{user.name}}</h1>
+            <button type="button" class="btn btn-block" ng-click="logout()">Logout User</button>
+        </div>
+        <form ng-hide="isLogin()" ng-submit="login()">
+            <div class="form-group">
+                <label>UserName:</label>
+                <input type="text" class="form-control" ng-model="data.name"/>
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" class="form-control" ng-model="data.password"/>
+            </div>
+            <button type="submit"  class="btn btn-success">Login User</button>
+        </form>
+    </div>
 </div>
-<div ng-hide="isLogin()">
-    <input type="text" ng-model="data.name"/>
-    <input type="text" ng-model="data.password"/>
-    <button type="button"  ng-click="login()">Login User</button>
-</div>
-
